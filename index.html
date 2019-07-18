@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta charset="utf-8">
+  <meta name="viewport", content="width=device-width", initial-scale="1.0">
+
+  <title>CSS Grid Basics</title>
+
+  <meta name="description" content="CSS Grid Basics">
+  <meta name="author" content="RKK Creative">
+
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <nav id="navbar">
+      <header><h1>CSS Grid Basics</h1></header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction_to_Grid">Introduction to Grid</a></li>
+        <li><a class="nav-link" href="#Creating_Grid_Tracks">Creating Grid Tracks</a></li>
+        <li><a class="nav-link" href="#Automatic_Rows">Automatic Rows</a></li>
+        <li><a class="nav-link" href="#Positioning_Grid_Items">Positioning Grid Items</a></li>
+        <li><a class="nav-link" href="#Defining_Gutters">Defining Gutters</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section id="Introduction_to_Grid" class="main-section">
+        <header><h2>Introduction to Grid</h2></header>
+        <h3>CSS Grid Basic Concepts</h3>
+        <p>CSS Grid is a 2 dimensional system which uses an intersecting set of horizonal and diagonal lines to place and align its child elements.
+        With Grid you have the ability to layer elements, create nested grids, adjust the positioning of entire grouped areas as the viewport resizes
+        and add additional rows or columns when needed.</p>
+        <p>Elements can be positioned:
+        <ul class="main-list">
+          <li class="main-list-item">Explictly, using px values, fixed track sizes and precise locations.</li>
+          <li class="main-list-item">Flexibly, utilizing the grid algorithm, spercentages and fractions to control the document flow.</li>
+        </ul>
+        <hr>
+        <p><strong>To get started with Grid</strong>, first create a wrapper and change the display to grid, each direct descendant of the wrapper will then become a grid child.</p>
+
+     <pre><code>
+     .wrapper
+     display: grid;
+      or
+     display: inline-grid;
+     </code></pre>
+
+      </section>
+      <hr>
+      <section id="Creating_Grid_Tracks" class="main-section">
+        <header><h2>Creating Grid Tracks</h2></header>
+          <h3>Explict Grid Tracks</h3>
+            <p>Grid Tracks can define rows and columns within the grid using: </p>
+
+      <pre><code>
+      grid-template-columns:
+      grid-template-rows:
+      </pre></code>
+
+            <p>In the first example below, tracks are created by applying an individual value to each required column such as px/fr. The second example shows the use of repeat() notation
+              to generate a specific number of equal sized rows. <strong>Both methods can be used on either rows or columns to create an explict grid</strong></p>
+
+      <pre><code>
+      grid-template-columns: 200px 1fr 2fr;
+      grid-template-rows: repeat(3, 1fr);
+      </pre></code>
+
+      </section>
+      <hr>
+      <section id="Automatic_Rows" class="main-section">
+        <header><h2>Automatic Rows</h2></header>
+        <h3>Controlling Automatic Row Spacing</h3>
+        <p>When items extend the specified grid or content needs to flow into new rows, <strong>grid will create new rows which are auto-sized to fit their content.</strong>
+        <br> The following examples show how to control this default behaviour: </p>
+
+      <pre><code>
+      grid-auto-rows: 300px
+      grid-auto-rows: minmax(200px, auto)
+      </pre></code>
+
+        <p>In the first example above, all rows will conform to the specified height of 300px as they are created. However, by using the minmax() function you can create a more
+          flexible row that will stretch to accomodate the content (auto) whilst not allowing the row to shrink below a specific minimum height, which in this case is 200px.</p>
+      </section>
+      <hr>
+      <section id="Positioning_Grid_Items" class="main-section">
+        <header><h2>Positioning Grid Items</h2></header>
+        <h3>Targeting Grid Lines</h3>
+        <p><strong>A simple way to position grid items is line-based placement</strong>, the below example shows a grid item using this method to define its position within the grid container</p>
+
+      <pre><code>
+      grid-column-start: 1
+      grid-column-end: 3
+      grid-row-start: 2
+      grid-row-end: 3
+      </pre></code>
+
+        <ul class="main-list">
+          <li class="main-list-item">Declaration 1. Will place the item at the start of the first vertical grid line</li>
+          <li class="main-list-item">Declaration 2. States the item will end at the third vertical grid line, so it will span two columns in total from the column start position</li>
+          <li class="main-list-item">Declaration 3. Will place the item at the start of the second horizonal grid line</li>
+          <li class="main-list-item">Declaration 4. States the item will end at the third horizonal grid line, spanning one row in total from the row start position</li>
+        </ul>
+      </section>
+      <hr>
+      <section id="Defining_Gutters" class="main-section">
+        <header><h2>Defining Gutters</h2></header>
+        <h3>Using Grid-Gap Properties</h3>
+        <p><strong>Gutters are easily created within the Grid Container</strong>, however browser support does vary and often will need to be vendor prefixed.<br>
+        When using css grid it is always advisable to check support by visiting <a class="main-link" href="https://caniuse.com/" target="_blank">caniuse.com</a>. The below shows
+        four different examples of usage, however in addition to px, percentage or em units you are also able to use both rem and calc() functions to assign values. </p>
+
+      <pre><code>
+      grid-column-gap: 10px;
+      grid-row-gap: 1em;
+      grid-gap: 10%;
+      grid-gap: 1em 2em;
+      </pre></code>
+
+        <ul class="main-list">
+          <li class="main-list-item">Declaration 1. Uses a fixed px value to create 10px wide column gutters</li>
+          <li class="main-list-item">Declaration 2. Assigns an em value to create 1em row gutters</li>
+          <li class="main-list-item">Declaration 3. grid-gap or gap, will assign the specified value to both the row and column gutters</li>
+          <li class="main-list-item">Declaration 4. Declaring two values on the grid-gap property will assign the first to the row gutter and the second to the column gutter</li>
+        </ul>
+      </section>
+      <hr>
+      <section id="Reference" class="main-section">
+        <header><h2>Reference</h2></header>
+        <p>All information provided was sourced from <a class="main-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank">
+          MDN Web Docs, Basic Concepts of a Grid Layout</a>.</p>
+      </section>
+  </main>
+</body>
+
+</html>

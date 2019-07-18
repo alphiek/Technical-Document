@@ -1,0 +1,173 @@
+html {
+font-size: calc(0.6em + 1vw);
+font-family: Verdana, Geneva, sans-serif;
+line-height: 120%;
+color: #333;
+scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  width: 90%;
+  font-size: 0.5em;
+  letter-spacing: 0.03em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a:hover {
+  color: #283593;
+}
+
+h2, h3, p  {
+  padding-left: 0.5em;
+}
+
+h3 {
+  font-size: 0.68em;
+  text-transform: uppercase;
+  font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+}
+
+p {
+  font-size: 0.57em;
+}
+
+code {
+  display: block;
+  padding: 0;
+  white-space: pre-wrap;
+  display: block;
+  text-align: left;
+  font-size: 0.52em;
+  background-color: #eee;
+}
+
+h2 {
+  background-color: #333;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 0.8em;
+  font-weight: bolder;
+}
+
+h1 {
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: white;
+  font-size: 1em;
+  font-weight: bolder;
+  color: #333;
+  letter-spacing: -0.045em;
+  line-height: 120%;
+  margin: 0 auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0 1em 0 1em;
+  padding: 0px;
+
+}
+
+ul:last-child {
+  padding-bottom: 2em;
+}
+
+li {
+  text-align: center;
+  padding: 0.2em;
+  text-decoration: none;
+  border-bottom: 0.09em solid #eee;
+  transition: 0.3s;
+}
+
+li:hover {
+  border-bottom: 0.09em solid #333;
+}
+
+
+section {
+  font-size: 1rem;
+  border: 0.1em solid #eee;
+  border-radius: 0.2em;
+  padding: 0 1em 1em 1em;
+}
+
+#main-doc {
+  margin-left: 22.5vw;
+}
+
+#navbar {
+  font-size: 1rem;
+  width: 22.5vw;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+}
+
+.nav-link {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.main-list {
+  padding-left: 2em;
+  padding-bottom: 0px;
+  text-align: left;
+  list-style-type: square;
+}
+
+.main-list-item {
+  padding-top: 0px;
+  font-size: 0.55em;
+  text-align: left;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.main-list-item:hover {
+  border-bottom: 0;
+}
+
+.main-link {
+  font-size: 1em;
+  text-transform: none;
+  color: #00695C;
+}
+
+.main-link:visited {
+  text-decoration: line-through;
+}
+
+
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: calc(0.6em + 1.5vw);
+  }
+  #navbar  {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  #main-doc {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: calc(0.6em + 3vw);
+  }
+  .main-list {
+    padding-left: 1em;
+  }
+  li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
