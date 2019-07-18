@@ -1,4 +1,4 @@
-# Survey Form
+# Technical Document
 
 Responsive Technical Document built with HTML/CSS for FreeCodeCamp Responsive Web Design Certificate.
 
